@@ -67,6 +67,13 @@ function M.remove()
 	end
 end
 
+function M.clear()
+	for i = #M.overlays, 1, -1 do
+		pcall(vim.fn.matchdelete, M.overlays[i].id)
+		table.remove(M.overlays, i)
+	end
+end
+
 local function is_overlayed(word)
 	for _, v in ipairs(M.overlays) do
 		if v.word == word then
