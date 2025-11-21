@@ -29,8 +29,8 @@ M.config = vim.deepcopy(M.default_config)
 function M.colors_setup()
 	for i, color in ipairs(colors) do
 		local hl = "SymbolsOverlay" .. i
-		local ok = pcall(vim.api.nvim_get_hl, 0, { name = hl })
-		if not ok then
+		local ok = vim.api.nvim_get_hl(0, { name = hl })
+		if not ok.bg then
 			vim.api.nvim_set_hl(0, hl, color)
 		end
 	end
@@ -260,6 +260,7 @@ end
 
 function M.setup(opts)
 	M.config = vim.tbl_deep_extend("force", M.config, opts or {})
+	M.colors_setup()
 end
 
 return M
