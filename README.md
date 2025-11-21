@@ -20,13 +20,14 @@ By [lazy.nvim](https://github.com/folke/lazy.nvim):
     opts = {},
     keys = {
         { "<leader>ho", function() require("symbols-overlay").add() end, desc = "Overlay: add current word" },
-        { "<leader>hd", function() require("symbols-overlay").remove() end, desc = "Overlay: delete current" },
+        { "<leader>hd", function() require("symbols-overlay").remove() end, desc = "Overlay: delete current word" },
+        { "<leader>hc", function() require("symbols-overlay").clear() end, desc = "Overlay: clear all word" },
         { "<leader>hn", function() require("symbols-overlay").next() end, desc = "Overlay: next" },
         { "<leader>hN", function() require("symbols-overlay").prev() end, desc = "Overlay: prev" },
-        { "<leader>hr", function() require("symbols-overlay").rename() end, desc = "Overlay: rename (buffer only)" },
+        { "<leader>hr", function() require("symbols-overlay").rename() end, desc = "Overlay: rename" },
         { "<leader>ht", function() require("symbols-overlay").toggle() end, desc = "Overlay: toggle current word" },
-        { "<leader>h]", function() require("symbols-overlay").switch_forward() end, desc = "Overlay: switch to next nearby" },
-        { "<leader>h[", function() require("symbols-overlay").switch_backward() end, desc = "Overlay: switch to prev nearby" },
+        { "<leader>h]", function() require("symbols-overlay").switch_forward() end, desc = "Overlay: switch to next nearby highlight" },
+        { "<leader>h[", function() require("symbols-overlay").switch_backward() end, desc = "Overlay: switch to prev nearby highlight" },
     },
 }
 
